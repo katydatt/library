@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kindle BookShelf</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header>
+      <% if logged_in? %>
+        <nav>
+          <li>
+
+            <form action='/session' method='post'>
+              <input type='hidden' value='delete' name='_method'>
+              <button id="logout"> Log out </button>
+            </form>
+          </li>
+
+          <li><a href="/account">My Profile </a></li>
+          <li id="hello">Hello, <%= current_user.first_name %> </li>
+
+      <% else %>
+
+        <ul class='menu'>
+          <li>
+            <a href='/session/login'> Login </a>
+          </li>
+          <li>
+            <a href='/user/signup'> Sign Up </a>
+          </li>
+        </ul>
+        <% end %>
+      </nav>
+  </header>
+
+  <div id='main'>
+    <%= yield %>
+    <style>
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+           -webkit-text-fill-color: white !important;
+   }
+</style>
+  </div>

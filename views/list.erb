@@ -1,0 +1,19 @@
+
+
+<div class='list_by_title'>
+<% @filtered_books.each do |single_book| %>
+
+<ul class="list_by_title">
+  <li class='list_by_title'>
+
+    <a href="/info/<%= single_book['isbn10']%>" ><%= single_book['title'] %></a>
+
+
+  </li>
+
+</ul>
+
+<%end%>
+</div>
+
+<a href="<%= request.referrer %>" class='back'>Back</a>

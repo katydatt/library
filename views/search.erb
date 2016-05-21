@@ -1,0 +1,23 @@
+<div class='search'>
+
+  <div class='by_title'>
+    <h2>Search by Title:</h2>
+    <form autocomplete="off" action='/list'>
+    <label for=''></label>
+    <input type='text' name='book' placeholder="Search for a book">
+    <button>Search</button>
+  </div>
+
+
+      <h2 id="cat">Search by Category:</h2>
+      <div class='by_category'>
+
+      <% @categories.each do |category| %>
+
+        <a href="/category/<%= category.id %>"> <%= category.name.capitalize %> </a>
+        <% end %>
+
+
+    </div>
+  </div>
+</div>

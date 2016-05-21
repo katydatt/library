@@ -1,0 +1,11 @@
+<a href="<%= request.referrer %>" class='back'>back</a>
+
+<div class='list'>
+<% @books.each do |book|%>
+  <a href='/info?book=<%= book['id']%>' class='list'>
+    <%= book['title'] %>
+  </a><br>
+
+<% end %>
+
+</div>
