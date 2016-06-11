@@ -113,8 +113,7 @@ get '/search' do
 end
 
 get '/category/:id' do
- category = Category.find_by(id: params[:id])
- @books = Book.where(category_id: params[:category_id])
+  @books = Category.find(params[:id]).books
   erb :category
 end
 
@@ -135,6 +134,7 @@ get '/info/:isbn' do
       @book_id = book.id
       @book_isbn = book.isbn
       @book_type = book.department
+      @book_category_id = book.category_id
     else
       @texts = GoogleBooks.search(params[:isbn])
         @texts.each do |text|
@@ -176,7 +176,7 @@ get '/info/:isbn' do
         elsif @book_type == "Technology & Engineering"
           book.category_id = 9
         else
-          book.category_id = nil
+          book.category_id = "Fiction"
         end
 
       book.save
