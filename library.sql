@@ -22,15 +22,15 @@ CREATE TABLE categories(
   name VARCHAR(50) NOT NULL
 );
 
-INSERT INTO categories (name) VALUES ('art-music');
-INSERT INTO categories (name) VALUES ('biography');
-INSERT INTO categories (name) VALUES ('business');
-INSERT INTO categories (name) VALUES ('classics');
-INSERT INTO categories (name) VALUES ('fiction');
-INSERT INTO categories (name) VALUES ('history');
-INSERT INTO categories (name) VALUES ('non-fiction');
-INSERT INTO categories (name) VALUES ('romance');
-INSERT INTO categories (name) VALUES ('science');
+INSERT INTO categories (name) VALUES ('Arts & Disciplines');
+INSERT INTO categories (name) VALUES ('Biography & Autobiography');
+INSERT INTO categories (name) VALUES ('Business & Economics');
+INSERT INTO categories (name) VALUES ('Juvenile Fiction');
+INSERT INTO categories (name) VALUES ('Fiction');
+INSERT INTO categories (name) VALUES ('History');
+INSERT INTO categories (name) VALUES ('Nonfiction');
+INSERT INTO categories (name) VALUES ('Drama');
+INSERT INTO categories (name) VALUES ('Technology & Engineering');
 
 
 CREATE TABLE users (

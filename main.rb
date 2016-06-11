@@ -161,19 +161,19 @@ get '/info/:isbn' do
           book.category_id = 1
         elsif @book_type == "Biography & Autobiography"
           book.category_id = 2
-        elsif @book_type == "Business"
+        elsif @book_type == "Business & Economics"
           book.category_id = 3
-        elsif @book_type == "Classics"
+        elsif @book_type == "Juvenile Fiction"
           book.category_id = 4
-        elsif @book_type == "Fiction" || book.department == "Juvenile Fiction"
+        elsif @book_type == "Fiction"
           book.category_id = 5
         elsif @book_type == "History"
           book.category_id = 6
         elsif @book_type == "Nonfiction"
           book.category_id = 7
-        elsif @book_type == "Romance" || book.department == "Drama"
+        elsif @book_type == "Drama"
           book.category_id = 8
-        elsif @book_type == "Science"
+        elsif @book_type == "Technology & Engineering"
           book.category_id = 9
         else
           book.category_id = nil

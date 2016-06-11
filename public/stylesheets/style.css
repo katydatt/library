@@ -200,7 +200,7 @@ div.by_title button {
 
 .by_category {
 width: 100%;
-height: 400px;
+height: 600px;
 display: block;
 background-color: #DDD9C9;
 padding-top: 5px;
@@ -210,18 +210,17 @@ top: 500px;
 }
 
 .all-categories {
-  margin-left: 25%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 5%;
 }
 
 
 div.by_category a {
   border-radius: 5px;
-  height:65px;
-  width: 180px;
+  width: 300px;
   text-align: center;
   background-color: white;
-  padding-top: 20px;
+  padding: 20px;
   font-size: 18px;
   text-decoration: none;
   color: black;
