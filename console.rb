@@ -1,4 +1,4 @@
-require 'pry'
+
 require 'active_record'
 
 
@@ -10,7 +10,3 @@ require './models/category'
 require './models/user'
 require './models/comment'
 require '.models/like'
-
-
-
-binding.pry

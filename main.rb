@@ -1,4 +1,4 @@
-require 'pry'
+
 require 'sinatra'
 require 'active_record'
 require 'pg'
@@ -176,7 +176,7 @@ get '/info/:isbn' do
         elsif @book_type == "Technology & Engineering"
           book.category_id = 9
         else
-          book.category_id = "Fiction"
+          book.category_id = 5
         end
 
       book.save
