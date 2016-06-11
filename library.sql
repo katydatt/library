@@ -7,12 +7,13 @@ CREATE TABLE books(
   title VARCHAR(300),
   author VARCHAR(300),
   year VARCHAR(50),
-  cover VARCHAR(1000),
+  cover VARCHAR(2000),
   page_count INTEGER,
-  category VARCHAR(50),
-  isbn VARCHAR(50)
+  notes VARCHAR(10000),
+  isbn VARCHAR(50),
+  department VARCHAR(50),
+  category_id INTEGER
 );
-
 
 SELECT * FROM books;
 
@@ -32,14 +33,6 @@ INSERT INTO categories (name) VALUES ('romance');
 INSERT INTO categories (name) VALUES ('science');
 
 
-CREATE TABLE reviews(
-  id SERIAL4 PRIMARY KEY,
-  body VARCHAR(1000) NOT NULL,
-  book_id INTEGER,
-  user_id INTEGER
-);
-
-
 CREATE TABLE users (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(50),
@@ -51,11 +44,6 @@ CREATE TABLE users (
   password_digest VARCHAR(400) NOT NULL
 );
 
-CREATE TABLE favourites(
-  id SERIAL4 PRIMARY KEY,
-  user_id INTEGER,
-  book_id INTEGER
-);
 
 CREATE TABLE comments(
   id SERIAL4 PRIMARY KEY,

@@ -1,19 +1,20 @@
-
+<header>
+    <nav>
+        <ul class="header">
+            <li class="back">
+                <a href="<%= request.referrer %>">Back</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
 <div class='list_by_title'>
-<% @filtered_books.each do |single_book| %>
+  <% @books.each do |text| %>
+    <ul>
+      <li class='list_by_title'>
+        <a href="/info/<%= text.isbn_13 %>"> <%= text.title %>  (Authour: <%= text.authors %>) </a>
+      </li>
 
-<ul class="list_by_title">
-  <li class='list_by_title'>
-
-    <a href="/info/<%= single_book['isbn10']%>" ><%= single_book['title'] %></a>
-
-
-  </li>
-
-</ul>
-
-<%end%>
+    </ul>
+  <%end%>
 </div>
-
-<a href="<%= request.referrer %>" class='back'>Back</a>

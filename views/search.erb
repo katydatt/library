@@ -1,23 +1,35 @@
-<div class='search'>
+<header>
+    <nav>
+        <ul class="header">
+            <li class="back">
+                <a href="<%= request.referrer %>">Back</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
+<div class='search'>
   <div class='by_title'>
-    <h2>Search by Title:</h2>
+    <h3>Do you already know what you're looking for?</h3>
+    <h3> Then go ahed and type your title...</h3>
     <form autocomplete="off" action='/list'>
     <label for=''></label>
-    <input type='text' name='book' placeholder="Search for a book">
+    <input type='text' name='title' placeholder="Type a title...">
     <button>Search</button>
   </div>
 
 
-      <h2 id="cat">Search by Category:</h2>
-      <div class='by_category'>
+  <div class='by_category'>
+    <h2 id="cat">Search from our Categories </h2>
+      <div class="all-categories">
+        <% @categories.each do |category| %>
 
-      <% @categories.each do |category| %>
+              <a href="/category/<%= category.id %>"> <%= category.name.capitalize %> </a>
 
-        <a href="/category/<%= category.id %>"> <%= category.name.capitalize %> </a>
         <% end %>
+      </div>
 
 
-    </div>
   </div>
+
 </div>

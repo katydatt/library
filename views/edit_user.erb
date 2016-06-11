@@ -1,0 +1,31 @@
+<div class='edit-user'>
+
+  <form action="/account/<%= @user.id %>" method="post">
+    <input type="hidden" value="patch" name="_method"><br>
+
+    <label for="">First Name</label><br>
+    <input type="text" name="first_name" value="<%= @user.first_name %>"><br>
+
+    <label for="">Surname</label><br>
+    <input type="text" name="last_name" value="<%= @user.last_name %>"><br>
+
+    <label for="">Email</label><br>
+    <input type="text" name="email" value="<%= @user.email %>"><br>
+
+    <label for="">New Password</label><br>
+    <input type="password" name="password"><br>
+
+    <label for=''> City </label><br>
+    <input type='text' name='city' value="<%= @user.city %>"><br>
+
+    <label for=''> Address </label><br>
+    <input type='text' name='address' value="<%= @user.address %>"><br>
+
+    <label for=''> Date of birth </label><br>
+    <input type='date' name='date_of_birth' value="<%= @user.date_of_birth %>"><br>
+
+    <button> &#x270e; Edit Details</button>
+
+  </form>
+
+</div>

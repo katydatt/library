@@ -1,24 +1,34 @@
 <div class='edit'>
 
   <form action="/info/<%= @book.isbn %>" method="post">
-    <input type="hidden" value="patch" name="_method">
+    <input type="hidden" value="patch" name="_method"><br>
 
-    <label for="">Title</label>
-    <input type="text" name="title" value="<%= @book.title %>">
+    <label for="">Title</label><br>
+    <input type="text" name="title" value="<%= @book.title %>"><br>
 
-    <label for="">Author</label>
-    <input type="text" name="title" value="<%= @book.author %>">
+    <label for="">Author</label><br>
+    <input type="text" name="author" value="<%= @book.author %>"><br>
 
-    <label for="">Category</label>
-    <input type="text" name="category" value="<%= @book.category %>">
+    <label> Category </label><br>
+    <select>
+      <option name="category_id" value="1">Art-music</option>
+      <option name="category_id" value="2">Biography</option>
+      <option name="category_id" value="3">Business</option>
+      <option name="category_id" value="4">Classic</option>
+      <option name="category_id" value="5">Fiction</option>
+      <option name="category_id" value="6">History</option>
+      <option name="category_id" value="7">Non Fiction</option>
+      <option name="category_id" value="8">Romance</option>
+      <option name="category_id" value="9">Science</option>
+    </select><br>
 
-    <label for=''> Number of pages </label>
-    <input type='text' name='number_pages' value="<%= @book.page_count %>">
+    <label for=''> Number of pages </label><br>
+    <input type='text' name='number_pages' value="<%= @book.page_count %>"><br>
 
-    <label for=''> What about a cover image ?</label>
-    <input type='text' name='cover' value="<% @book.cover %>">
+    <label for=''> Description </label><br>
+    <input type='text' name='notes' value="<%= @book.notes %>"><br>
 
-    <button>Edit Details</button>
+    <button> &#x270e; Edit Details</button>
   </form>
 
 </div>

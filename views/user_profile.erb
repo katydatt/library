@@ -1,0 +1,93 @@
+<header>
+    <nav>
+        <ul class="header">
+            <li class="back">
+                <a href="<%= request.referrer %>">Back</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="account-details">
+    <table class="info-profile">
+        <tr>
+            <td class="info-book-subtitle">
+                Name:
+            </td>
+            <td>
+                <%= @user.first_name.capitalize %>
+            </td>
+        </tr>
+        <tr>
+            <td class="info-book-subtitle">
+                Surname:
+            </td>
+            <td>
+                <%= @user.last_name.capitalize %>
+            </td>
+        </tr>
+        <tr>
+            <td class="info-book-subtitle">
+                Email:
+            </td>
+            <td>
+                <%= @user.email %>
+            </td>
+        </tr>
+        <tr>
+            <td class="info-book-subtitle">
+                Birthday:
+            </td>
+            <td id="birthday">
+                <%= @user.date_of_birth %>
+            </td>
+        </tr>
+        <tr>
+            <td class="info-book-subtitle">
+                City:
+            </td>
+            <td>
+                <%= @user.city.capitalize %>
+            </td>
+        </tr>
+        <tr>
+            <td class="info-book-subtitle">
+                Address:
+            </td>
+            <td>
+                <%= @user.address.capitalize %>
+            </td>
+        </tr>
+    </table>
+
+    <a class="edit-profile-link" href="/account/<%= @user.id %>/edit">
+        &#x270e; Edit Details</a>
+
+</div>
+
+<script>
+
+    var monthsArr = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+    var date = document.getElementById("birthday").innerHTML;
+    console.log(date);
+    var string = new Date(date);
+    console.log(string);
+    var month = (monthsArr[string.getMonth()]);
+    console.log(string.getDay());
+    var new_date = (string.getDay() + " " + month + " " + string.getFullYear());
+    console.log(new_date);
+    document.getElementById('birthday').innerHTML = new_date;
+</script>

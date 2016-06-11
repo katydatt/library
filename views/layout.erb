@@ -1,28 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kindle BookShelf</title>
-  <link rel='stylesheet' href='/stylesheets/main.css'>
-  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='/stylesheets/style.css'>
 </head>
 <body>
   <header>
       <% if logged_in? %>
         <nav>
+        <ul class="header">
           <li>
-
             <form action='/session' method='post'>
               <input type='hidden' value='delete' name='_method'>
               <button id="logout"> Log out </button>
             </form>
           </li>
+          <li class="links"><a href="/search"> Search</a></li>
 
-          <li><a href="/account">My Profile </a></li>
-          <li id="hello">Hello, <%= current_user.first_name %> </li>
-
+          <li class="links" ><a href="/account/<%= current_user.id %>">My Profile </a></li>
+          <li id="hello" class="links">Hello, <%= current_user.first_name.capitalize %> </li>
+        </ul>
       <% else %>
 
         <ul class='menu'>
