@@ -8,4 +8,4 @@ gem 'pg'
 gem 'httparty'
 gem 'bcrypt'
 gem 'googlebooks'
-gem "thin"
+gem 'thin'
