@@ -13,7 +13,7 @@ require './models/like'
 
 
 get '/list' do
-  @more = HTTParty.get("https://www.googleapis.com/books/v1/volumes?q=#{params[:book]}")
+  @more = HTTParty.get("http://isbndb.com/api/books.xml?access_key=POV7SEJN&index1=title&value1=#{params[:book]}")
   books = @more["items"]
 
 

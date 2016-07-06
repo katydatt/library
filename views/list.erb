@@ -10,11 +10,13 @@
 
 <div class='list_by_title'>
   <% @books.each do |text| %>
+      <% if text.isbn_10 %>
     <ul>
       <li class='list_by_title'>
-        <a href="/info/<%= text.isbn_13 %>"> <%= text.title %>  (Authour: <%= text.authors %>) </a>
+        <a href="/info/<%= text.isbn_10 %>"> <%= text.title %> ➜ Isbn: <%= text.isbn_10 %> </a>
       </li>
 
     </ul>
+    <% end %>
   <%end%>
 </div>

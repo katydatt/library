@@ -145,7 +145,7 @@ get '/info/:isbn' do
           @book_page_count = text.page_count
           @book_notes = text.description
           @book_type = text.categories
-          @book_isbn = text.isbn
+          @book_isbn = text.isbn_10
         end
 
       book = Book.new
