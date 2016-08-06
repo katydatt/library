@@ -10,122 +10,74 @@
     </nav>
 </header>
 
-<div class='info'>
-    <p id='title'>
-        <%= @book_title %>
-    </p>
-    <div class='container'>
-        <div class="image">
-            <img src="<%= @book_cover %>" width="200px">
-        </div>
-        <div class='sidebar'>
-            <table class="book-info-table">
-                <tr>
-                    <td class="info-book-subtitle"> Author
-                    </td>
-                    <td class="book-info-det">
-                        <%= @book_author %>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info-book-subtitle">
-                        Isbn
-                    </td>
-                    <td class="book-info-det">
-                        <%= @book_isbn %>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info-book-subtitle">
-                        Published Date
-                    </td>
-                    <td class="book-info-det" id="mydate">
-                        <%= @book_year %>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="book-info-down">
-            <table>
-                <tr>
-                    <td class="info-book-subtitle">Plot
-                    </td>
-                    <td class="book-info-det">
-                        <%= @book_notes %>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info-book-subtitle">Pages
-                    </td>
-                    <td class="book-info-det">
-                        <%= @book_page_count %>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info-book-subtitle">Category
-                    </td>
-                    <td class="book-info-det">
-                        <%= @book_type %>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="info-book-subtitle">Likes
-                    </td>
-                    <td class="book-info-det">
-                        <%= @likes.count %>
-                        ❤
-                    </td>
-                </tr>
-
-            </table>
-            <div class='comment'>
-
-                <% @comments.each do |comment| %>
-                <div class="com">
-                    <p>
-                        <%= comment.user.first_name.capitalize %>
-                        : "<%= comment.body %>"
-
-                    </p>
-                    <% end %>
-                </div>
-            </br>
-            <div class="book-actions">
-                <div class="book-likes">
-                    <form action="/like/<%= @book_isbn %>" method="post">
-                        <input type="hidden" name="isbn" value="<%= @book_isbn %>">
-                        <input type="hidden" name="book_id" value="<%= @book_id %>">
-                        <button class='btn-like'>
-                            ❤ like
-                        </button>
-                    </form>
-                </div>
-                <div class="book-delete">
-                    <form action="/info/<%= @book_isbn %>" method="post">
-                        <input type="hidden" value="delete" name="_method">
-                        <button class='btn-delete'>
-                            &#x2718; Delete</button>
-                    </form>
-                </div>
-                <div class="post-section">
-                    <form action="/info/<%= @book_isbn %>" method="post">
-                        <input type="hidden" name="book_id" value="<%= @book_id %>">
-                        <input type="hidden" name="user_id" value="<%= current_user.id %>">
-                        <div class="comment-textarea">
-                            <textarea name='body' placeholder="type your comment here..."></textarea>
-                        </div>
-                        <button class="btn-post">
-                            &#x270d; Post
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="link-for-edit">
-                <a href="/info/<%= @book_isbn %>/edit" id="edit-link">&#x270e; Edit infos</a>
-            </div>
-        </div>
+<div class='info-book'>
+  <div class="container-infos">
+    <div class="cover-image">
+      <img src="<%= @book_cover %>" width="200px">
     </div>
+    <div class="book-notes">
+      <h2><%= @book_title %> </h2>
+      <h3>by <%= @book_author %></h3>
+      <% if @book_page_count %>
+        <p><%= @book_page_count %> pages</p>
+      <% end %>
+      <% if @book_type%>
+        <p><%= @book_type %></p>
+      <% end %>
+      <% if @book_year %>
+        <p id="mydate"><%= @book_year %></p>
+      <% end %>
+      <% if @book_notes %>
+        <p><%= @book_notes %></p>
+      <% end %>
+      <% if @book_likes %>
+        <p><%= @book_likes.count %> like </p>
+      <% end %>
+    </div>
+    <div class="comments-section">
+      <% @comments.each do |comment| %>
+      <h4> <%= comment.user.first_name.capitalize %> </h4>
+      <p>  <%= comment.body %> </p>
+      </div> </br>
+
+      <div class="book-actions">
+        <div class="book-delete">
+          <% if comment %>
+          <form action="/info/<%= @book_isbn %>" method="post">
+            <input type="hidden" value="delete" name="_method">
+            <button class='btn-delete btn'> &#x2718; Delete</button>
+          </form>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="book-likes">
+          <form action="/like/<%= @book_isbn %>" method="post">
+            <input type="hidden" name="isbn" value="<%= @book_isbn %>">
+            <input type="hidden" name="book_id" value="<%= @book_id %>">
+            <button class='btn-like btn'> Like </button>
+          </form>
+        </div>
+        <div class="post-section">
+          <button id="btn-comment" class="btn"> Comment </button>
+          <form action="/info/<%= @book_isbn %>" method="post">
+            <input type="hidden" name="book_id" value="<%= @book_id %>">
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">
+            <div class="comment-textarea" id="comment">
+              <textarea name='body' placeholder="Add comment.."></textarea>
+              <button class="btn-post btn"> &#x270d; Post </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="link-edit">
+        <a href="/info/<%= @book_isbn %>/edit">&#x270e; Edit </a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
 
     <script>
 
@@ -151,4 +103,10 @@
         var new_date = (string.getDay() + " " + month + " " + string.getFullYear());
         console.log(new_date);
         document.getElementById('mydate').innerHTML = new_date;
+
+      $(document).ready(function(){
+        $("#btn-comment").on("click", function() {
+          $("#comment").toggleClass("show");
+        });
+      });
     </script>

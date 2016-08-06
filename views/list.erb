@@ -8,15 +8,22 @@
     </nav>
 </header>
 
-<div class='list_by_title'>
+<div class='title-list'>
   <% @books.each do |text| %>
       <% if text.isbn_10 %>
-    <ul>
-      <li class='list_by_title'>
-        <a href="/info/<%= text.isbn_10 %>"> <%= text.title %> ➜ Isbn: <%= text.isbn_10 %> </a>
-      </li>
 
-    </ul>
+      <div class="book-container">
+            <a href="/info/<%= text.isbn_10 %>">
+              <img src="<%= text.image_link %>">
+              <div class="container-title">
+                <ul>
+                  <li><%= text.title %></li>
+                  <li> ➜ Isbn: <%= text.isbn_10 %> </li>
+                </ul>
+
+              </div>
+            </a>
+      </div>
     <% end %>
   <%end%>
 </div>

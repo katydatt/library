@@ -269,176 +269,107 @@ li.back {
 }
 
 /* LIST PAGE */
-ul.list_by_title {
-  text-align: center;
-  margin: auto;
-  line-height: 40px;
+.title-list {
+  width: 60%;
+  position: absolute;
+  top: 200px;
+  left: 25%;
+  display: inline-block;
+
 }
-li.list_by_title{
-  list-style: none;
-  padding-bottom: 20px;
+.book-container {
+  width: 200px;
+  height: 400%;
+  padding: 20px;
+  margin-right: 20px;
+  float: left;
 }
-li.list_by_title a {
-  color: #413A38;
+.book-container a {
   text-decoration: none;
-  font-size: 26px;
-}
-
-div.list_by_title :hover {
-  background-color: #9C9E95;
   color: white;
+  text-shadow: 1px 1px 1px black;
 }
-div.list_by_title{
-  background-color: #DDD9C9;
-  border-radius: 3px;
-  opacity: 0.8;
-  width: 50%;
-  margin-left: 300px;
-
+.book-container ul {
+  list-style: none;
+  padding: 0;
 }
-/* INFO */
-#title {
+.book-container img {
+  width: 150px;
+  height: 200px;
+}
+.container-title {
+  margin-top: 15px;
   text-align: center;
 }
-.info-book-subtitle{
-  color: #413A38;
-}
-.book-info-det {
-  padding-left: 25px;
-}
-.container{
-  margin-left: 120px;
-}
-div.info{
-  font-weight: bold;
-  color: #796053;
-  background-color: #DDD9C9;
-  opacity: 0.8;
+
+/* INFO */
+
+.info-book {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
   width: 70%;
-  height: auto;
   position: absolute;
   left: 15%;
-  top: 15%;
-  font-size: 20px;
-  margin: 0;
-
+  padding: 20px;
 }
-.image {
-  width: 200px;
+.container-infos {
+  width: 100%;
+  margin: 20px;
+}
+.cover-image {
+  width: 45%;
   display: inline-block;
-  vertical-align: -webkit-baseline-middle;
-  margin: 30px;
+  margin-top: 20px;
 }
-#heart {
-  width: 20%;
+p {
+  font-size: 16px;
 }
-div.info li {
-  list-style-type: none;
-  line-height: 30px;
-}
-
-div.sidebar {
+.book-notes {
   width: 50%;
   display: inline-block;
-  margin-top: 40px;
-  line-height: 30px;
-  padding-left: 30px;
+  vertical-align: top;
 
 }
 
-.book-info-down {
-  margin-top: 30px;
-  margin-left: 200px;
+.book-title {
+  text-align: center;
+  margin-top: 20px;
 }
 
-#title {
-  font-size: 28px;
-  margin: 30px;
+.comment-textarea {
+  display: none;
 }
 
-div.comment textarea {
-height: 70px;
-width: 300px;
-font-size: 18px;
-color: grey;
-margin-top: 15%;
+.show {
+  display: inline;
 }
 
-.book-likes {
-  display: inline-block;
-}
-.book-delete {
+.book-likes, .book-delete, .post-section {
   display: inline-block;
   vertical-align: top;
 }
 
-.btn-like{
-  width: 80px;
-  background-color: #C6C6B8;
-  color: black;
-  text-align: center;
-  border:1px solid black;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn-delete {
-  background-color: #C6C6B8;
-  color: black;
-  text-align: center;
-  border:1px solid black;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn-post {
-  width: 80px;
-  background-color: #C6C6B8;
-  color: black;
-  text-align: center;
-  border:1px solid black;
-  font-size: 16px;
-  cursor: pointer;
-  bottom: 15%;
-  display: inline-block;
-  vertical-align: middle;
-}
-.post-section {
-  margin-top: 60px;
-}
-
-div.container {
-  padding-bottom: 10%;
-}
-div.comment p {
-  padding-bottom: 10px;
-  font-size: 14px;
-  color: gray;
-}
-.comment-textarea {
-  display: inline-block;
-}
-textarea {
-  width: 250px;
-  height: 70px;
-}
-div.sidebar {
-  display: inline-block;
-  width: 60%;
-}
-#like {
-  margin-left: 30%;
-}
-#edit-link {
-  text-decoration: none;
-  padding:5px;
+.btn {
+  width: 60px;
+  height: 30px;
+  margin-bottom: 10px;
+  margin-left: 300%;
+  background-color: white;
   border: 1px solid black;
-  font-weight: normal;
 }
+.link-edit a {
+  background-color: white;
+  padding: 10px;
+  width: 60px;
+  height:30px;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  text-shadow: none;
+  border: 1px solid black;
 
-.link-for-edit {
-  margin-left: 70px;
-  margin-top: 40px;
 }
 
 /* EDIT */
