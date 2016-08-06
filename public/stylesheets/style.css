@@ -310,6 +310,7 @@ li.back {
   text-align: center;
   width: 70%;
   position: absolute;
+  top: 90px;
   left: 15%;
   padding: 20px;
 }
@@ -337,15 +338,8 @@ p {
   margin-top: 20px;
 }
 
-.comment-textarea {
-  display: none;
-}
 
-.show {
-  display: inline;
-}
-
-.book-likes, .book-delete, .post-section {
+.book-likes, .book-delete {
   display: inline-block;
   vertical-align: top;
 }
@@ -354,24 +348,66 @@ p {
   width: 60px;
   height: 30px;
   margin-bottom: 10px;
-  margin-left: 300%;
   background-color: white;
   border: 1px solid black;
 }
+
+.link-edit {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: -150px;
+  bottom: -100px;
+}
+
 .link-edit a {
-  background-color: white;
-  padding: 10px;
-  width: 60px;
-  height:30px;
   text-align: center;
   font-size: 14px;
   text-decoration: none;
   color: black;
   text-shadow: none;
-  border: 1px solid black;
-
+  position: relative;
+  bottom: -2px;
 }
 
+.book-actions button{
+  display: inline-block;
+}
+
+.btn-delete {
+  position: relative;
+    right: -133px;
+    top: -76px;
+}
+
+/*COMMENT SECTION */
+
+.comment-textarea {
+  display: none;
+}
+.show {
+  display: inline-block;
+}
+.comment-textarea textarea {
+  position: relative;
+  left: 400px;
+  top: -7px;
+  width: 200px;
+  height: 50px;
+}
+.btn-post {
+  position: relative;
+  left: 196px;
+  top: 20px;
+}
+.btn-like {
+  margin-left: 300px;
+}
+
+.comments-section {
+  position: absolute;
+  right: 50px;
+}
 /* EDIT */
 
 div.edit {

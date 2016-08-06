@@ -12,9 +12,11 @@
 
 <div class='info-book'>
   <div class="container-infos">
+
     <div class="cover-image">
       <img src="<%= @book_cover %>" width="200px">
     </div>
+
     <div class="book-notes">
       <h2><%= @book_title %> </h2>
       <h3>by <%= @book_author %></h3>
@@ -34,22 +36,9 @@
         <p><%= @book_likes.count %> like </p>
       <% end %>
     </div>
-    <div class="comments-section">
-      <% @comments.each do |comment| %>
-      <h4> <%= comment.user.first_name.capitalize %> </h4>
-      <p>  <%= comment.body %> </p>
-      </div> </br>
 
       <div class="book-actions">
-        <div class="book-delete">
-          <% if comment %>
-          <form action="/info/<%= @book_isbn %>" method="post">
-            <input type="hidden" value="delete" name="_method">
-            <button class='btn-delete btn'> &#x2718; Delete</button>
-          </form>
-          <% end %>
-          <% end %>
-        </div>
+
         <div class="book-likes">
           <form action="/like/<%= @book_isbn %>" method="post">
             <input type="hidden" name="isbn" value="<%= @book_isbn %>">
@@ -57,8 +46,9 @@
             <button class='btn-like btn'> Like </button>
           </form>
         </div>
-        <div class="post-section">
+
           <button id="btn-comment" class="btn"> Comment </button>
+        <div class="post-section">
           <form action="/info/<%= @book_isbn %>" method="post">
             <input type="hidden" name="book_id" value="<%= @book_id %>">
             <input type="hidden" name="user_id" value="<%= current_user.id %>">
@@ -66,47 +56,28 @@
               <textarea name='body' placeholder="Add comment.."></textarea>
               <button class="btn-post btn"> &#x270d; Post </button>
             </div>
+
           </form>
         </div>
+
+        <div class="comments-section">
+
+
+          <% @comments.each do |comment| %>
+          <h4> <%= comment.user.first_name.capitalize %> says about this book:</h4>
+          <p>  <%= comment.body %> </p>
+          <div class="book-delete">
+            <form action="/info/<%= @book_isbn %>" method="post">
+              <input type="hidden" value="delete" name="_method">
+              <button class='btn-delete btn'> &#x2718; Delete</button>
+            </form>
+          </div>
+          <% end %>
+        </div> </br>
+
+        <button class="link-edit btn">
+          <a href="/info/<%= @book_isbn %>/edit">&#x270e; Edit info book </a>
+        </button>
       </div>
-      <div class="link-edit">
-        <a href="/info/<%= @book_isbn %>/edit">&#x270e; Edit </a>
-      </div>
-    </div>
   </div>
-
-
 </div>
-
-
-    <script>
-
-        var monthsArr = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ];
-        var date = document.getElementById("mydate").innerHTML;
-        console.log(date);
-        var string = new Date(date);
-        console.log(string);
-        var month = (monthsArr[string.getMonth()]);
-        var new_date = (string.getDay() + " " + month + " " + string.getFullYear());
-        console.log(new_date);
-        document.getElementById('mydate').innerHTML = new_date;
-
-      $(document).ready(function(){
-        $("#btn-comment").on("click", function() {
-          $("#comment").toggleClass("show");
-        });
-      });
-    </script>

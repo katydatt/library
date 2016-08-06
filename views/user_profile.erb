@@ -38,7 +38,7 @@
             <td class="info-book-subtitle">
                 Birthday:
             </td>
-            <td id="birthday">
+            <td id="mydate">
                 <%= @user.date_of_birth %>
             </td>
         </tr>
@@ -64,30 +64,3 @@
         &#x270e; Edit Details</a>
 
 </div>
-
-<script>
-
-    var monthsArr = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-    var date = document.getElementById("birthday").innerHTML;
-    console.log(date);
-    var string = new Date(date);
-    console.log(string);
-    var month = (monthsArr[string.getMonth()]);
-    console.log(string.getDay());
-    var new_date = (string.getDay() + " " + month + " " + string.getFullYear());
-    console.log(new_date);
-    document.getElementById('birthday').innerHTML = new_date;
-</script>
