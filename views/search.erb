@@ -1,12 +1,4 @@
-<header>
-    <nav>
-        <ul class="header">
-            <li class="back">
-                <a href="<%= request.referrer %>">Back</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+
 
 <div class='search'>
   <div class='by_title'>
@@ -18,18 +10,16 @@
     <button>Search</button>
   </div>
 
-
-  <div class='by_category'>
-    <h2 id="cat">Search from our Categories </h2>
-      <div class="all-categories">
-        <% @categories.each do |category| %>
-
-              <a href="/category/<%= category.id %>"> <%= category.name.capitalize %> </a>
-
-        <% end %>
-      </div>
+  <% if logged_in? %>
+    <div class='by_category'>
+      <h2 id="cat">Search from our Categories </h2>
+        <div class="all-categories">
+          <% @categories.each do |category| %>
+            <a href="/category/<%= category.id %>"> <%= category.name.capitalize %> </a>
+          <% end %>
+        </div>
 
 
-  </div>
-
+    </div>
+  <% end %>
 </div>
