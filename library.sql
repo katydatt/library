@@ -12,6 +12,7 @@ CREATE TABLE books(
   notes VARCHAR(10000),
   isbn VARCHAR(50),
   department VARCHAR(50),
+  ratings VARCHAR(50),
   category_id INTEGER
 );
 

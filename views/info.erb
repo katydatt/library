@@ -26,6 +26,9 @@
       <% if @book_type%>
         <p><%= @book_type %></p>
       <% end %>
+      <% if @book_ratings%>
+        <p> Ratings <%= @book_ratings %> // 5 </p>
+      <% end %>
       <% if @book_year %>
         <p id="mydate"><%= @book_year %></p>
       <% end %>

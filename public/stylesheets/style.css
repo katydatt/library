@@ -7,7 +7,7 @@
 
 *{
   box-sizing: border-box;
-  font-family: 'Prociono', serif;
+  font-family: 'Lora', serif;
 }
 body {
   background-image: url('/stylesheets/book-coffee.jpg');
@@ -94,7 +94,6 @@ ul.menu li a {
 /* LOGIN */
 
 div.in {
-  background-color: #DDD9C9;
   text-align: center;
   color: #8B7C6E;
   line-height: 60px;
@@ -103,55 +102,66 @@ div.in {
   padding: 10px;
   padding-bottom: 40px;
   padding-top: 30px;
-  opacity: 0.8;
 }
-div.in h2 {
-  color: #8B7C6E;
 
+div.in h2 {
+  color: white;
+  text-shadow: 1px 1px 1px black;
 }
 
 div.in input {
+  width: 270px;
   height: 35px;
   font-size: 16px;
+  border-radius: 10px;
+  padding-left: 10px;
   margin: 0px;
 }
 
 div.in button{
   width: 200px;
-  height: 40px;
-  font-size: 18px;
+  height: 30px;
+  font-size: 16px;
+  position: absolute;
+  bottom: 80px;
+  right: 42%;
 }
 
 /* SIGNUP */
 div.signup {
   font-size: 20px;
-  background-color:  #DDD9C9;
   text-align: center;
-  width: 50%;
+  width: 70%;
   height: auto;
   position: absolute;
-  left: 300px;
+  left: 15%;
   font-size: 26px;
-  opacity: 0.8;
 }
 div.signup form{
 line-height: 50px;
 }
 div.signup h2 {
-  color: #8B7C6E;
+  color: white;
   margin: 10px;
+  text-shadow: 1px 1px 1px black;
 }
 
 div.signup input {
-  height: 35px;
-  width: 200px;
+  height: 30px;
+  width: 270px;
+  color: grey;
   font-size: 14px;
+  border-radius: 10px;
   padding-left: 10px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 div.signup button {
   width: 200px;
   height: 30px;
   margin-bottom: 20px;
+  font-size: 16px;
+  color: #8B7C6E;
 }
 
 div.logout{
@@ -292,6 +302,9 @@ li.back {
 .book-container ul {
   list-style: none;
   padding: 0;
+}
+.book-container li {
+  line-height: 25px;
 }
 .book-container img {
   width: 150px;
@@ -455,13 +468,13 @@ div.edit {
 
 /* USER PAGE */
 div.account-details {
-  background-color: #C6C6B8;
   position: absolute;
   left: 25%;
   width: 50%;
   height: 80%;
-  color: #796053;
-  opacity: 0.8;
+  /*color: #796053;*/
+  color: white;
+  text-shadow: 1px 1px 1px black;
   font-size: 20px;
   border-radius: 20px;
 }
@@ -473,10 +486,7 @@ div.account-details {
   line-height: 50px;
 }
 
-.edit-profile-link {
-  text-decoration: none;
-  border: 1px solid #796053;
-  padding: 20px;
+.btn-edit-link {
   position: absolute;
   bottom: 10%;
   left: 40%;
@@ -485,15 +495,14 @@ div.account-details {
 /* EDIT USER PROFILE */
 
 div.edit-user {
-  background-color: #C6C6B8;
   position: absolute;
+  top: 25%;
   left: 25%;
   width: 60%;
   height: 100%;
-  color: #796053;
-  opacity: 0.8;
+  color: white;
+  text-shadow: 1px 1px 1px black;
   font-size: 16px;
-  border-radius: 20px;
   text-align: center;
 }
 
@@ -502,19 +511,25 @@ div.edit-user {
   width: 270px;
   color: grey;
   font-size: 14px;
+  border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 5px;
   padding-left: 5px;
 }
 
-.edit-user button {
-  padding:5px;
-  border: 1px solid black;
+.btn-edit {
   position: absolute;
-  left: 43%;
-  font-weight: normal;
-  font-size: 16px;
-  background-color: white;
-  width:100px;
-  cursor: pointer;
+  left: 40%;
+  bottom: 30%;
+}
+
+.personal-info {
+  width: 40%;
+  display: inline-block;
+}
+
+.other-infos{
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
 }

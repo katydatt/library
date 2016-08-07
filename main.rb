@@ -134,6 +134,7 @@ get '/info/:isbn' do
       @book_id = book.id
       @book_isbn = book.isbn
       @book_type = book.department
+      @book_ratings = book.ratings
       @book_category_id = book.category_id
     else
       @texts = GoogleBooks.search(params[:isbn])
@@ -146,6 +147,8 @@ get '/info/:isbn' do
           @book_notes = text.description
           @book_type = text.categories
           @book_isbn = text.isbn_10
+          @book_ratings = text.average_rating
+
         end
 
       book = Book.new
@@ -178,6 +181,8 @@ get '/info/:isbn' do
         else
           book.category_id = 5
         end
+        book.ratings = @book_ratings
+
 
       book.save
       @book_id = book.id
