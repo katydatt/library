@@ -12,7 +12,7 @@
 
       <label for=''> Date of birth </label><br>
       <input type='date' name='date_of_birth' value="<%= @user.date_of_birth %>"><br>
-      
+
       <label for="">Email</label><br>
       <input type="text" name="email" value="<%= @user.email %>"><br>
     </div>
@@ -34,3 +34,37 @@
   </form>
 
 </div>
+
+<style media="screen">
+/* EDIT USER PROFILE */
+
+    div.edit-user {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 60%;
+        height: 100%;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .edit-user input {
+        height: 30px;
+        width: 270px;
+        color: grey;
+        font-size: 14px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+        padding-left: 5px;
+    }
+
+    .btn-edit {
+        position: absolute;
+        left: 40%;
+        bottom: 30%;
+    }
+
+</style>

@@ -8,3 +8,6 @@ Signing up will allow you to access at the info page of the book and search book
 API from : https://github.com/zeantsoi/GoogleBooks
 
 The application has been built using Ruby Sinatra, jQuery, Css.
+
+# run your Postgresql Database
+# ruby main.rb

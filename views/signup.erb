@@ -21,3 +21,75 @@
 
     </form>
 </div>
+
+<style>
+
+    #main {
+        position: relative;
+        height: 100%;
+    }
+
+    div.signup {
+        font-size: 1rem;
+        text-align: center;
+        width:100%;
+        height: auto;
+        position: absolute;
+
+    }
+
+    div.signup form{
+        line-height: 50px;
+    }
+
+    div.signup h2 {
+        color: white;
+        margin: 20px auto;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    div.signup input {
+        height: 50px;
+        width: 100%;
+        color: grey;
+        border: none;
+        font-size: 1rem;
+        border-radius: 10px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
+
+    div.signup button {
+        width: 100px;
+        height: 40px;
+        border: none;
+        border-radius: 3px;
+        margin: 30px 0;
+        font-size: 1rem;
+        background-color: white;
+        color: grey;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.signup button:hover {
+        background-color: #3EE982;
+    }
+
+    @media screen and (min-width: 768px) {
+        .personal-info {
+            width: 40%;
+            display: inline-block;
+        }
+        .other-infos{
+            width: 40%;
+            margin-left: 5%;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+</style>
